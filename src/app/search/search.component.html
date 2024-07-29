@@ -1,22 +1,32 @@
-<form (ngSubmit)="searchVehicleData()">
-  <label for="search">Datos del vehiculo:</label>
-  <input type="text" id="search" [(ngModel)]="search" name="search" />
-  <button type="submit" [disabled]="!search">Obtener datos</button>
-</form>
+<div class="h-full flex flex-col justify-center">
+  <p class="text-4xl mx-auto p-5 font-extrabold italic font-mono antialiased text-emerald-400	">ruedapinchá</p>
+  <form (ngSubmit)="searchVehicleData()" class="flex flex-col space-y-3">
+    <label for="search" class="text-center font-bold text-3xl">¿Qué vehículo tienes?</label>
+    <div class="flex flex-row justify-center">
+      <input type="text" id="search" [(ngModel)]="search" name="search" class="w-1/2 me-2 p-3 text-lg rounded-lg border-zinc-400 border-2"/>
+      <button type="submit" [disabled]="!search" class="border-2 p-2 rounded-lg hover:bg-slate-500 text-white transition duration-500 disabled:bg-slate-50 disabled:text-slate-500 bg-indigo-600	">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+      </button>
+    </div>
 
-<div *ngIf="loading">
-    <p>Cargando...</p>
-</div>
+  </form>
 
-<div *ngIf="response?.length > 0">
-  <h1>Respuesta</h1>
-  <ul>
-    <li *ngFor="let pressure of response"> {{ pressure }}</li>
-  </ul>
-</div>
+  <div *ngIf="loading" class="absolute top-0 w-full h-full bg-blend-multiply bg-slate-800/75 text-white z-50 flex flex-col justify-center transition duration-250">
+    <svg class="w-full h-64" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/><g><circle cx="4" cy="12" r="3" fill="currentColor"/><circle cx="20" cy="12" r="3" fill="currentColor"/><animateTransform attributeName="transform" calcMode="spline" dur="1s" keySplines=".36,.6,.31,1;.36,.6,.31,1" repeatCount="indefinite" type="rotate" values="0 12 12;180 12 12;360 12 12"/></g></svg>
+  </div>
+
+  <div *ngIf="response?.length > 0">
+    <h1>Respuesta</h1>
+    <ul>
+      <li *ngFor="let pressure of response"> {{ pressure }}</li>
+    </ul>
+  </div>
 
 
-<div *ngIf="!!error">
-  <h1>Error</h1>
-  <p>{{ error }}</p>
+  <div *ngIf="!!error">
+    <h1>Error</h1>
+    <p>{{ error }}</p>
+  </div>
 </div>
