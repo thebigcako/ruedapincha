@@ -1,0 +1,22 @@
+<form (ngSubmit)="searchVehicleData()">
+  <label for="search">Datos del vehiculo:</label>
+  <input type="text" id="search" [(ngModel)]="search" name="search" />
+  <button type="submit" [disabled]="!search">Obtener datos</button>
+</form>
+
+<div *ngIf="loading">
+    <p>Cargando...</p>
+</div>
+
+<div *ngIf="response?.length > 0">
+  <h1>Respuesta</h1>
+  <ul>
+    <li *ngFor="let pressure of response"> {{ pressure }}</li>
+  </ul>
+</div>
+
+
+<div *ngIf="!!error">
+  <h1>Error</h1>
+  <p>{{ error }}</p>
+</div>

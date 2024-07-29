@@ -1,0 +1,12 @@
+<form (ngSubmit)="saveApiKey()" #apiDataForm="ngForm">
+  <label for="apiKey">ApiKey: </label>
+  <input type="text" [(ngModel)]="apiConfig.apiKey" id="apiKey" name="apiKey" required>
+
+  <label for="modelName">ModelName: </label>
+  <input type="text" [(ngModel)]="apiConfig.modelName" id="modelName" name="modelName" required>
+
+  <button type="submit" [disabled]="!apiDataForm.valid" (click)="saveApiKey()">Guardar</button>
+  <button type="button" (click)="removeApiKey()" *ngIf="apiKeyStored">Eliminar clave API</button>
+</form>
+
+
