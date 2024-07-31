@@ -40,6 +40,7 @@ export class SearchComponent {
     this.response = [];
     this.loading = true;
     this.error = null;
+    this.noVehicle = false;
 
     try {
       // Llama a la API
