@@ -1,12 +1,32 @@
-<form (ngSubmit)="saveApiKey()" #apiDataForm="ngForm">
-  <label for="apiKey">ApiKey: </label>
-  <input type="text" [(ngModel)]="apiConfig.apiKey" id="apiKey" name="apiKey" required>
+<form (ngSubmit)="saveApiKey()" #apiDataForm="ngForm" class="h-full w-full flex flex-col justify-center space-y-2">
+  <p class="text-center text-2xl">Configuración (Proveedor OpenAI)</p>
+  <div class="flex flex-row space-x-2 mx-auto">
+    <label for="apiKey">ApiKey: </label>
+    <input type="text" [(ngModel)]="apiConfig.apiKey" id="apiKey" name="apiKey" required class="p-1 rounded-lg border-zinc-400 border-2">
+  </div>
 
-  <label for="modelName">ModelName: </label>
-  <input type="text" [(ngModel)]="apiConfig.modelName" id="modelName" name="modelName" required>
+  <div class="flex flex-row space-x-2 mx-auto">
+    <label for="modelName">ModelName: </label>
+    <input type="text" [(ngModel)]="apiConfig.modelName" id="modelName" name="modelName" required  class="p-1 rounded-lg border-zinc-400 border-2">
+  </div>
 
-  <button type="submit" [disabled]="!apiDataForm.valid" (click)="saveApiKey()">Guardar</button>
-  <button type="button" (click)="removeApiKey()" *ngIf="apiKeyStored">Eliminar clave API</button>
+  <div class="flex flex-row space-x-2 mx-auto">
+    <label for="modelName">URL API: </label>
+    <input type="text" [(ngModel)]="apiConfig.url" id="url" name="url" required  class="p-1 rounded-lg border-zinc-400 border-2">
+  </div>
+
+  <div class="flex flex-row space-x-2 mx-auto">
+    <button type="submit" [disabled]="!apiDataForm.valid" (click)="saveApiKey()"
+            class="border-2 p-2 rounded-lg hover:bg-blue-700 text-white transition duration-500 disabled:bg-slate-50 disabled:text-slate-500 bg-blue-600"
+    >
+      Guardar
+    </button>
+    <button type="button" (click)="removeApiKey()" *ngIf="apiKeyStored"
+            class="border-2 p-2 rounded-lg hover:bg-red-700 text-white transition duration-500 disabled:bg-slate-50 disabled:text-slate-500 bg-red-600"
+    >
+      Eliminar clave API
+    </button>
+  </div>
 </form>
 
 

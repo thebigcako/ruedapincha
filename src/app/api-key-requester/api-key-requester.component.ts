@@ -26,10 +26,6 @@ export class ApiKeyRequesterComponent implements OnInit  {
   ngOnInit() {
     this.apiConfig = this.searchService.getApiConfig();
     this.apiKeyStored = this.searchService.apiKeyStored();
-
-    if (!this.apiConfig) {
-      this.apiConfig = new ApiConfig();
-    }
   }
 
   saveApiKey() {

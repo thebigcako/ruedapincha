@@ -1,0 +1,40 @@
+<div class="flex flex-col w-full justify-center space-y-2" *ngIf="pressuresValues.valid">
+  <p class="text-red-400 text-center">Estas presiones son orientativas, consultar siempre manual de usuario del vehículo.</p>
+
+  <div class="flex flex-col mx-auto p-2 justify-center space-y-0.5 border-2 border-zinc-400 rounded-lg">
+    <p class="text-lg w-full text-center">Unidad</p>
+    <div class="flex flex-row w-full justify-center">
+      <button type="button"
+              class="border-2 p-2 rounded-lg hover:bg-slate-500 text-white transition duration-500 disabled:bg-slate-50 disabled:text-slate-500"
+              [class.bg-green-600]="unit === 'psi'"
+              [class.bg-blue-600]="unit !== 'psi'"
+              (click)="setUnit('psi')">psi
+      </button>
+      <button type="button"
+              class="border-2 p-2 rounded-lg hover:bg-slate-500 text-white transition duration-500 disabled:bg-slate-50 disabled:text-slate-500 bg-blue-600"
+              [class.bg-green-600]="unit === 'bar'"
+              [class.bg-blue-600]="unit !== 'bar'"
+              (click)="setUnit('bar')">bar
+      </button>
+      <button type="button"
+              class="border-2 p-2 rounded-lg hover:bg-slate-500 text-white transition duration-500 disabled:bg-slate-50 disabled:text-slate-500 bg-blue-600"
+              [class.bg-green-600]="unit === 'kpa'"
+              [class.bg-blue-600]="unit !== 'kpa'"
+              (click)="setUnit('kpa')">kPA
+      </button>
+    </div>
+  </div>
+
+  <div class="flex flex-row w-full justify-center space-x-2 text-xl">
+    <div class="flex flex-col justify-center border-2 border-rose-400 p-2 rounded-lg">
+      <p class="text-center">Delantera</p>
+      <p class="text-center font-bold">{{ pressuresValues.front | number:'1.0-2' }} {{ unit }}</p>
+    </div>
+
+    <div class="flex flex-col justify-center text-xl border-2 border-green-400  p-2 rounded-lg">
+      <p class="text-center">Trasera</p>
+      <p class="text-center font-bold">{{ pressuresValues.rear | number:'1.0-2' }} {{ unit }}</p>
+    </div>
+  </div>
+
+</div>
