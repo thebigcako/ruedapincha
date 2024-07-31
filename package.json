@@ -9,6 +9,7 @@
     "test": "ng test"
   },
   "private": true,
+  "license": "apache-2.0",
   "dependencies": {
     "@ai-sdk/openai": "^0.0.40",
     "@angular/animations": "^18.1.0",
