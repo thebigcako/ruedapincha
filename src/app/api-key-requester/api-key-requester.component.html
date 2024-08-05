@@ -1,19 +1,19 @@
 <form (ngSubmit)="saveApiKey()" #apiDataForm="ngForm" class="h-full w-full flex flex-col justify-center space-y-2">
   <p class="text-4xl mx-auto p-5 font-extrabold italic font-mono antialiased text-emerald-400 	">ruedapinchá</p>
   <p class="text-center text-2xl">Configuración (Proveedor OpenAI)</p>
-  <div class="flex flex-row space-x-2 mx-auto w-1/4">
-    <label for="apiKey" class="my-auto w-1/4 text-right">ApiKey </label>
-    <input type="text" [(ngModel)]="apiConfig.apiKey" id="apiKey" name="apiKey" required class="p-1 rounded-lg border-zinc-400 border-2 w-full">
+  <div class="flex flex-row mx-auto w-full lg:w-1/4">
+    <label for="apiKey" class="my-auto w-1/4 text-right mr-2">ApiKey </label>
+    <input type="text" [(ngModel)]="apiConfig.apiKey" id="apiKey" name="apiKey" required class="p-1 rounded-lg border-zinc-400 border-2 w-full mr-2">
   </div>
 
-  <div class="flex flex-row space-x-2 mx-auto w-1/4">
-    <label for="modelName" class="my-auto w-1/4 text-right">ModelName </label>
-    <input type="text" [(ngModel)]="apiConfig.modelName" id="modelName" name="modelName" required  class="p-1 rounded-lg border-zinc-400 border-2 w-full">
+  <div class="flex flex-row mx-auto w-full lg:w-1/4">
+    <label for="modelName" class="my-auto w-1/4 text-right mr-2">ModelName </label>
+    <input type="text" [(ngModel)]="apiConfig.modelName" id="modelName" name="modelName" required  class="p-1 rounded-lg border-zinc-400 border-2 w-full mr-2">
   </div>
 
-  <div class="flex flex-row space-x-2 mx-auto w-1/4">
-    <label for="modelName" class="my-auto w-1/4 text-right">URL API </label>
-    <input type="text" [(ngModel)]="apiConfig.url" id="url" name="url" required  class="p-1 rounded-lg border-zinc-400 border-2 w-full">
+  <div class="flex flex-row mx-auto w-full lg:w-1/4">
+    <label for="modelName" class="my-auto w-1/4 text-right mr-2">URL API </label>
+    <input type="text" [(ngModel)]="apiConfig.url" id="url" name="url" required  class="p-1 rounded-lg border-zinc-400 border-2 w-full mr-2">
   </div>
 
   <div class="flex flex-row space-x-2 mx-auto">
